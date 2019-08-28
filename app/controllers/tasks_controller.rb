@@ -38,6 +38,10 @@ class TasksController < ApplicationController
     @task.destroy
   end
 
+  def delete_all_done
+    @tasks = Task.where(done: true).destroy_all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
